@@ -2,20 +2,24 @@ body {
     margin: 0;
     min-width: 300px;
 }
+
 * {
     box-sizing: border-box;
 }
+
 .the-header {
     background-color: tomato;
     padding: 30px 42px;
     color: white;
     text-align: center;
 }
+
 .the-header:after {
     content: '';
     display: table;
     clear: both;
 }
+
 #the-input {
     width: 70%;
     padding: 10px;
@@ -25,6 +29,7 @@ body {
     border: none;
     border-radius: 0;
 }
+
 .create-button {
     padding: 10px;
     background-color: sandybrown;
@@ -35,14 +40,22 @@ body {
     text-align: center;
     cursor: pointer;
     border-radius: 0;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
 }
+
 .create-button:hover {
     background-color: #ccc;
 }
+
 ul {
     margin: 0;
     padding: 0;
 }
+
 ul li {
     position: relative;
     background-color: peru;
@@ -51,8 +64,20 @@ ul li {
     transition: 0.3s;
     -webkit-user-select: none;
     -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
 }
+
+ul li:nth-child(odd){
+    background-color: #f9f9f9;
+}
+
+ul li.checked {
+    background: #282828;
+    color: white;
+    text-decoration: line-through;
+}
+
 ul li.checked::before {
     content: '';
     position: absolute;
@@ -69,12 +94,14 @@ ul li.checked::before {
 ul li:hover {
     background-color: #ccc;
 }
+
 .close {
     position: absolute;
     right: 0;
     top: 0;
     padding: 10px 15px 10px 15px;
 }
+
 .close:hover {
     background: #f44336;
 }
