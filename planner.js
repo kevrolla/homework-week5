@@ -99,16 +99,11 @@ $(document).ready(function() {
       // access index from data array for hour 
       $dailyPlanSpn.val( planTextArr[index] );
       
-      // create col to control width
       let $col9IptDiv = $('<div>');
       $col9IptDiv.addClass('col-md-9');
-  
-      // add col width and row component to row
       $rowDiv.append($col9IptDiv);
       $col9IptDiv.append($dailyPlanSpn);
-      // STOP building Time box portion of row
-  
-      // START building save portion of row
+      
       let $col1SaveDiv = $('<div>');
       $col1SaveDiv.addClass('col-md-1');
   
@@ -116,16 +111,13 @@ $(document).ready(function() {
       $saveBtn.attr('id',`saveid-${index}`);
       $saveBtn.attr('save-id',index);
       $saveBtn.attr('class',"far fa-save saveIcon");
-      
-      // add col width and row component to row
       $rowDiv.append($col1SaveDiv);
       $col1SaveDiv.append($saveBtn);
-      // STOP building save portion of row
   
-      // set row color based on time
+      // set a row color based on time
       updateRowColor($rowDiv, hour);
       
-      // add row to planner container
+      // add a row to planner container
       $plannerDiv.append($rowDiv);
     };
   
@@ -147,8 +139,8 @@ $(document).ready(function() {
       }
     };
   
-    // saves to local storage
-    // conclick function to listen for user clicks on plan area
+    // saved to local storage
+    // created a onclick function to listen for user clicks on plan area
     $(document).on('click','i', function(event) {
       event.preventDefault();  
   
@@ -166,12 +158,11 @@ $(document).ready(function() {
       if (test) { console.log('index ', $index); }
       if (test) { console.log('click pta after '+ planTextArr); }
   
-      // remove shawdow pulse class
       $(`#saveid-${$index}`).removeClass('shadowPulse');
       localStorage.setItem("storedPlans", JSON.stringify(planTextArr));
     });  
     
-    // function to color save button on change of input
+    // created a function to color save button on change of input
     $(document).on('change','input', function(event) {
       event.preventDefault();  
       if (test) { console.log('onChange'); }
